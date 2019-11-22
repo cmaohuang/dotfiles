@@ -1,0 +1,18 @@
+shell -$SHELL
+setenv PATH ''
+startup_message off
+vbell off
+defutf8 on
+
+defscrollback 10240
+
+hardstatus alwayslastline " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %Y-%m-%d %0c:%s "
+
+bindkey ^[t screen
+bindkey ^[w kill
+bindkey ^[z prev
+bindkey ^[x next
+bindkey ^[l lockscreen
+bindkey ^[r clear
+bindkey ^[k kill
+bindkey ^[\ quit

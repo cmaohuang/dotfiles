@@ -1,0 +1,9 @@
+function restow() {
+  stow -R -d ~/dotfiles editor git homebrew ruby screen shell system tmux vim;
+  ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
+  if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+    exec zsh -l
+  elif [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
+    exec bash -l
+  fi
+}

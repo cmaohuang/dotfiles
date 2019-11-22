@@ -1,0 +1,39 @@
+*.pyc
+*.swp
+
+# https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# https://github.com/github/gitignore/blob/master/Global/Tags.gitignore
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out

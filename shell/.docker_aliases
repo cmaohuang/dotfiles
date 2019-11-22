@@ -1,0 +1,59 @@
+function db-fn {
+  docker build -t=$1 .
+}
+function dex-fn {
+  docker exec -it $1 ${2:-bash}
+}
+function drun-fn {
+  docker run -it $1 $2
+}
+function drund-fn {
+  docker run -d $1
+}
+function drmc-fn {
+  docker rm $(docker ps -aq -f status=exited --no-trunc)
+}
+function drmid-fn {
+  docker rmi $(docker images -q -f dangling=true)
+}
+function dsr-fn {
+  docker stop $1;docker rm $1
+}
+# in order to do things like dex $(dlab label) sh
+function dlab {
+  docker ps --filter="label=$1" --format="{{.ID}}"
+}
+# https://stackoverflow.com/questions/28320134/how-to-list-all-tags-for-a-docker-image-on-a-remote-registry
+function dtags-fn {
+  echo "`wget -q https://registry.hub.docker.com/v1/repositories/${1}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'`"
+}
+
+alias datt='docker attach'
+alias ddiff='docker diff'
+alias dimg='docker images'
+alias dins='docker inspect'
+alias dlog='docker logs -f'
+
+alias dip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias dips="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}'"
+
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias dstart='docker start'
+alias dstop='docker stop'
+
+alias db=db-fn
+alias dex=dex-fn
+alias drun=drun-fn
+alias drund=drund-fn
+alias drmc=drmc-fn
+alias drmid=drmid-fn
+alias dsr=dsr-fn
+alias dtags=dtags-fn
+
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dcb='docker-compose build'
+alias dclogs='docker-compose logs'

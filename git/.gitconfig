@@ -1,0 +1,64 @@
+[include]
+    path = ~/.gitconfig.local
+
+[alias]
+    a = add
+    b = branch -v
+    c = commit -m
+    ca = commit -am
+    ci = commit
+    co = checkout
+    count = !git shortlog -sne
+    d = diff
+    dc = diff --cached
+    l = log --graph --date=short
+    pl = pull
+    plr= pull --rebase
+    ps = push
+    r = remote -v
+    rs = reset
+    rsh = reset --hard
+    s = status
+    st = status
+    sh = show
+    up = pull --rebase --autostash
+
+[apply]
+    whitespace = nowarn
+
+[commit]
+	template = ~/.git-commit-template
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+
+[color]
+    ui = true
+
+# [commit]
+#     gpgsign = true
+
+[diff]
+    renames = copies
+
+[diff "bin"]
+    textconv = hexdump -v -C
+
+[help]
+    autocorrect = 1
+
+[merge]
+    log = true
+
+[push]
+    default = simple
+
+# [url "https://"]
+#  insteadOf = git://
+#
+# [url "https://github.com/"]
+#  insteadOf = git@github.com:
+#
+# [url "https://user:pass@bitbucket.org"]
+#  insteadOf = ssh://git@bitbucket.org

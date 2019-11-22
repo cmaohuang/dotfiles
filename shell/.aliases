@@ -1,0 +1,77 @@
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color=auto"
+else                                 # macOS `ls`
+  colorflag="-GF"
+  export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+fi
+alias ls="ls ${colorflag}"
+alias ll='ls -la'
+
+command -v tailf > /dev/null || alias tailf="tail -f"
+command -v colordiff > /dev/null && alias diff='colordiff'
+
+alias vi=vim
+
+alias psa='ps aux'
+alias psg='ps aux | grep '
+
+[ $(uname) = "Darwin" ] && alias listen='lsof -i -n -P | grep LISTEN' || alias listen='netstat -ntlp'
+
+alias ..='cd ..'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias path='echo -e ${PATH//:/\\n}'
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+alias df='df -h'
+alias du='du -h -d 2'
+
+alias mkdir='mkdir -pv'
+
+alias mount='mount |column -t'
+
+alias h='history'
+#alias j='jobs -l'
+
+alias bc='bc -l'
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+alias sha1='openssl sha1'
+command -v md5sum > /dev/null || alias md5sum="md5"
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+command -v brew > /dev/null && alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+command -v atom > /dev/null && alias a="atom"
+command -v code > /dev/null && alias c="code"
+
+alias ga='git a'
+alias gb='git b'
+alias gc='git c'
+alias gca='git ca'
+alias gci='git ci'
+alias gco='git co'
+alias gd='git d'
+alias gdc='git dc'
+alias gl='git l'
+alias gpl='git pl'
+alias gplr='git plr'
+alias gps='git ps'
+alias grs='git rs'
+alias grsh='git rsh'
+alias gs='git status'
+alias gsh='git show'
+alias gshw='git show'
+alias gshow='git show'
+alias gup='git up'
+alias galias='git config --list | grep alias'
+
+command -v hub > /dev/null && eval "$(hub alias -s)"
+command -v docker > /dev/null && [[ -s ~/.docker_aliases ]] && source ~/.docker_aliases
+command -v kubectl > /dev/null && [[ -s ~/.kubectl_aliases ]] && source ~/.kubectl_aliases
