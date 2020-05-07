@@ -21,6 +21,7 @@ source "${SHARE_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 setopt auto_cd auto_pushd pushd_ignore_dups
 setopt always_to_end
 
+export HISTFILE=~/.zsh_history
 export HISTSIZE=3000
 export SAVEHIST=3000
 setopt extended_history hist_ignore_all_dups hist_ignore_dups hist_ignore_space inc_append_history share_history

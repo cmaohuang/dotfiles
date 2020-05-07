@@ -11,7 +11,7 @@ command -v fzf bat > /dev/null && \
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window 'right:70%' --preview 'bat --color=always {}'"
 
 [[ -s /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
-command -v chruby > /dev/null && chruby 2.5
+command -v chruby > /dev/null && chruby 2.6
 
 if [[ -d "/usr/local/go" || -d "/usr/local/opt/go" ]]; then
   [ $(uname) = "Darwin" ] && export GOROOT=/usr/local/opt/go/libexec || export GOROOT=/usr/local/go
@@ -38,3 +38,5 @@ fi
 
 [[ -s /usr/local/etc/profile.d/autojump.sh ]] && source /usr/local/etc/profile.d/autojump.sh
 [[ -s "$HOME/.autojump/etc/profile.d/autojump.sh" ]] && source "$HOME/.autojump/etc/profile.d/autojump.sh"
+
+[[ -d "$HOME/.krew/bin" ]] && export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
