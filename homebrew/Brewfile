@@ -12,6 +12,7 @@ brew 'fzf'
 brew 'gnu-tar'
 brew 'htop'
 brew 'ipcalc'
+#brew 'java11'
 brew 'jq'
 brew 'mas'
 brew 'mosh'
@@ -36,8 +37,13 @@ brew 'tree'
 brew 'watch'
 brew 'wget'
 brew 'youtube-dl'
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+brew 'zsh-autosuggestions'
+brew 'zsh-history-substring-search'
 
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 cask '1password'
 #cask 'adobe-reader'
 cask 'alfred'
@@ -56,7 +62,7 @@ cask 'iterm2'
 #cask 'ledger-live'
 #cask 'mounty'   # NTFS
 #cask 'nally'
-cask postman
+cask 'postman'
 cask 'shiftit'
 #cask 'skype'
 cask 'slack'
@@ -79,7 +85,7 @@ tap 'homebrew/cask-versions'
 cask 'dash3'
 #cask 'docker-edge'
 
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 cask 'font-fira-code'
 
 ### dev ###
@@ -93,7 +99,6 @@ brew 'hub'
 
 brew 'chruby', args: ['HEAD']
 brew 'ruby-install', args: ['HEAD']
-cask 'java'
 brew 'node'
 #brew 'pyenv'
 #brew 'mycli'
@@ -139,6 +144,6 @@ cask 'virtualbox-extension-pack'
 #cask 'gimp'
 
 #mas 'feedly', id: 865500966
-#mas 'Line', id: 539883307
-#mas 'Microsoft Remote Desktop', id: 1295203466
+mas 'Line', id: 539883307
+mas 'Microsoft Remote Desktop', id: 1295203466
 #mas 'Xcode', id: 497799835

@@ -62,3 +62,6 @@
 #
 # [url "https://user:pass@bitbucket.org"]
 #  insteadOf = ssh://git@bitbucket.org
+[user]
+	name = James Huang
+	email = cmao.huang@gmail.com
