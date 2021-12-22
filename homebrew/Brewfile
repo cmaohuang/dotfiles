@@ -37,6 +37,7 @@ brew 'tree'
 brew 'watch'
 brew 'wget'
 brew 'youtube-dl'
+brew 'yt-dlp'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
@@ -60,13 +61,14 @@ cask 'google-chrome'
 #cask 'google-photos-backup-and-sync'
 #cask 'headset'
 cask 'iterm2'
+cask 'kap'
 #cask 'ledger-live'
 #cask 'mounty'   # NTFS
 #cask 'nally'
 cask 'postman'
 cask 'rectangle'
 #cask 'skype'
-cask 'slack'
+#cask 'slack'
 #cask 'telegram-desktop'
 cask 'the-unarchiver'
 cask 'tomighty'
@@ -76,6 +78,7 @@ cask 'vlc'
 #cask 'xmind'
 #cask 'xnviewmp'
 #cask 'xquartz'
+cask 'zoom'
 
 #cask 'spotify'
 #cask 'mutespotifyads'
@@ -137,8 +140,8 @@ cask 'docker'
 #brew 'kubernetes-cli'
 #brew 'kubernetes-helm'
 
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
+#cask 'virtualbox'
+#cask 'virtualbox-extension-pack'
 
 ### others ###
 #cask 'obs'
@@ -148,5 +151,6 @@ cask 'virtualbox-extension-pack'
 
 #mas 'feedly', id: 865500966
 mas 'Line', id: 539883307
-mas 'Microsoft Remote Desktop', id: 1295203466
+#mas 'Microsoft Remote Desktop', id: 1295203466
 #mas 'Xcode', id: 497799835
+mas 'PhotoScape X - Photo Editor', id: 929507092
