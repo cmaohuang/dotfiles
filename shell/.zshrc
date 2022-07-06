@@ -1,4 +1,4 @@
-[ $(uname) = "Darwin" ] && SHARE_DIR=/usr/local/share || SHARE_DIR=/usr/share
+[ $(uname) = "Darwin" ] && SHARE_DIR=/opt/homebrew/share || SHARE_DIR=/opt/share
 fpath=("${SHARE_DIR}/zsh-completions" $fpath)
 autoload -Uz compinit promptinit
 compinit

@@ -102,6 +102,7 @@ brew 'hub'
 
 brew 'chruby', args: ['HEAD']
 brew 'ruby-install', args: ['HEAD']
+brew 'nvm'
 brew 'node'
 #brew 'pyenv'
 #brew 'mycli'

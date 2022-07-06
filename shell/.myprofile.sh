@@ -10,8 +10,8 @@ command -v fzf fd > /dev/null && \
 command -v fzf bat > /dev/null && \
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window 'right:70%' --preview 'bat --color=always {}'"
 
-[[ -s /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
-command -v chruby > /dev/null && chruby 2.7
+[[ -s /opt/homebrew/share/chruby/chruby.sh ]] && source /opt/homebrew/share/chruby/chruby.sh
+command -v chruby > /dev/null && chruby 3.0 
 
 if [[ -d "/usr/local/go" || -d "/usr/local/opt/go" ]]; then
   [ $(uname) = "Darwin" ] && export GOROOT=/usr/local/opt/go/libexec || export GOROOT=/usr/local/go
@@ -20,7 +20,7 @@ if [[ -d "/usr/local/go" || -d "/usr/local/opt/go" ]]; then
   export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
-[[ -d "$HOME/.nvm" ]] && export NVM_DIR="$HOME/.nvm" && source "$NVM_DIR/nvm.sh"
+[[ -d "$HOME/.nvm" ]] && export NVM_DIR="$HOME/.nvm" && [[ -s "/opt/homebrew/opt/nvm/nvm.sh" ]] && source "/opt/homebrew/opt/nvm/nvm.sh"
 
 [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"
 
@@ -36,7 +36,7 @@ fi
 
 [[ -s ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
-[[ -s /usr/local/etc/profile.d/autojump.sh ]] && source /usr/local/etc/profile.d/autojump.sh
+[[ -s /opt/homebrew/etc/profile.d/autojump.sh ]] && source /opt/homebrew/etc/profile.d/autojump.sh
 [[ -s "$HOME/.autojump/etc/profile.d/autojump.sh" ]] && source "$HOME/.autojump/etc/profile.d/autojump.sh"
 
 [[ -d "$HOME/.krew/bin" ]] && export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
