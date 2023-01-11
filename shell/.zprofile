@@ -1,4 +1,5 @@
+[[ -d "$HOME/.zsh-plugins" ]] || mkdir "$HOME/.zsh-plugins"
 for file in ~/.{aliases,exports,functions,myprofile.sh}; do
   [[ -s "$file" ]] && source "$file"
 done
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[ $(uname) = "Darwin" ] && eval "$(/opt/homebrew/bin/brew shellenv)"

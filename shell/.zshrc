@@ -1,5 +1,8 @@
-[ $(uname) = "Darwin" ] && SHARE_DIR=/opt/homebrew/share || SHARE_DIR=/opt/share
-fpath=("${SHARE_DIR}/zsh-completions" $fpath)
+[[ -f ~/.zsh-plugins/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.zsh-plugins/zsh-snap
+source ~/.zsh-plugins/zsh-snap/znap.zsh
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -12,11 +15,12 @@ bashcompinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
-source "${SHARE_DIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "${SHARE_DIR}/zsh-history-substring-search/zsh-history-substring-search.zsh"
+znap source zsh-users/zsh-completions
+znap source zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-source "${SHARE_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+znap source zsh-users/zsh-autosuggestions
 
 setopt auto_cd auto_pushd pushd_ignore_dups
 setopt always_to_end
