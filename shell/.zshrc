@@ -21,6 +21,7 @@ znap source zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 znap source zsh-users/zsh-autosuggestions
+znap source ael-code/zsh-colored-man-pages
 
 setopt auto_cd auto_pushd pushd_ignore_dups
 setopt always_to_end

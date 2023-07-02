@@ -2,8 +2,8 @@ if ls --color > /dev/null 2>&1; then # GNU `ls`
   colorflag="--color=auto"
 else                                 # macOS `ls`
   colorflag="-GF"
-  export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
+export LSCOLORS=GxfxbEaEBxxEhEhBaDaCaD
 alias ls="ls ${colorflag}"
 alias ll='ls -la'
 
