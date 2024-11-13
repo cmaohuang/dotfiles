@@ -11,7 +11,7 @@ command -v fzf bat > /dev/null && \
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window 'right:70%' --preview 'bat --color=always {}'"
 
 [[ -s /opt/homebrew/share/chruby/chruby.sh ]] && source /opt/homebrew/share/chruby/chruby.sh
-command -v chruby > /dev/null && chruby 3.1
+command -v chruby > /dev/null && chruby 3.3
 
 if [[ -d "/usr/local/go" || -d "/usr/local/opt/go" ]]; then
   [ $(uname) = "Darwin" ] && export GOROOT=/usr/local/opt/go/libexec || export GOROOT=/usr/local/go
