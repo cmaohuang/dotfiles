@@ -6,7 +6,7 @@ source ~/.zsh-plugins/zsh-snap/znap.zsh
 autoload -Uz compinit promptinit
 compinit
 promptinit
-prompt fade green
+#prompt fade green
 autoload -Uz select-word-style
 select-word-style bash
 autoload -Uz bashcompinit
@@ -32,3 +32,7 @@ export SAVEHIST=3000
 setopt extended_history hist_ignore_all_dups hist_ignore_dups hist_ignore_space inc_append_history share_history
 setopt interactive_comments
 setopt complete_in_word
+
+command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
+command -v starship > /dev/null && eval "$(starship init zsh)"
+

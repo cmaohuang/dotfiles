@@ -1,14 +1,14 @@
 [[ -s /usr/local/etc/bash_completion && -n $BASH_VERSION ]] && source /usr/local/etc/bash_completion
 
-[[ -n $ZSH_VERSION && -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-[[ -n $BASH_VERSION && -f ~/.fzf.bash ]] && source ~/.fzf.bash
+[[ -n $ZSH_VERSION ]] && source <(fzf --zsh)
+[[ -n $BASH_VERSION ]] && eval "$(fzf --bash)"
 command -v fzf fd > /dev/null && \
   export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git" && \
   export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND && \
   export FZF_ALT_C_COMMAND='fd --type d --color=always --follow --hidden --exclude .git' && \
   export FZF_DEFAULT_OPTS="--ansi"
 command -v fzf bat > /dev/null && \
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window 'right:70%' --preview 'bat --color=always {}'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window 'right:70%' --preview 'bat --color=always --theme=\"Catppuccin Mocha\" {}'"
 
 [[ -s /opt/homebrew/share/chruby/chruby.sh ]] && source /opt/homebrew/share/chruby/chruby.sh
 command -v chruby > /dev/null && chruby 3.3
@@ -35,8 +35,5 @@ fi
 [[ -d "$HOME/.cargo" ]] && export PATH="$HOME/.cargo/bin:$PATH"
 
 [[ -s ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-[[ -s /opt/homebrew/etc/profile.d/autojump.sh ]] && source /opt/homebrew/etc/profile.d/autojump.sh
-[[ -s "$HOME/.autojump/etc/profile.d/autojump.sh" ]] && source "$HOME/.autojump/etc/profile.d/autojump.sh"
 
 [[ -d "$HOME/.krew/bin" ]] && export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

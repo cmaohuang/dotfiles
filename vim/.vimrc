@@ -1,5 +1,5 @@
 set background=dark
-set number
+" set number
 
 let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
