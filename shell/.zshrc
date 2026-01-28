@@ -18,10 +18,16 @@ zstyle ':completion:*' menu select
 znap source zsh-users/zsh-completions
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 znap source zsh-users/zsh-autosuggestions
 znap source ael-code/zsh-colored-man-pages
+zmodload zsh/terminfo 2>/dev/null
+for km in emacs viins vicmd; do
+  [[ -n "${terminfo[kcuu1]-}" ]] && bindkey -M "$km" "${terminfo[kcuu1]}" history-substring-search-up
+  [[ -n "${terminfo[kcud1]-}" ]] && bindkey -M "$km" "${terminfo[kcud1]}" history-substring-search-down
+  bindkey -M "$km" $'\e[A' history-substring-search-up
+  bindkey -M "$km" $'\e[B' history-substring-search-down
+done
+
 
 setopt auto_cd auto_pushd pushd_ignore_dups
 setopt always_to_end
