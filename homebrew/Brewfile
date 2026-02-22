@@ -83,7 +83,7 @@ brew 'bat'
 brew 'gist'
 brew 'git'
 #brew 'git-lfs'
-brew 'git-flow'
+#brew 'git-flow'
 #brew 'hub'
 
 brew 'chruby', args: ['HEAD']
