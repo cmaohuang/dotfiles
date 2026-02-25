@@ -49,3 +49,15 @@ cscope.files
 cscope.out
 cscope.in.out
 cscope.po.out
+
+# Secrets / credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+credentials.json
+secrets.json
+
+# Local overrides (not tracked)
+.gitconfig.local
