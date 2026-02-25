@@ -1,0 +1,15 @@
+HISTIGNORE="&:[ ]*:exit"
+if [[ -n $BASH_VERSION ]]; then
+  case ";$PROMPT_COMMAND;" in
+    *";history -a; history -r;"*) ;;
+    *) PROMPT_COMMAND="history -a; history -n${PROMPT_COMMAND:+; $PROMPT_COMMAND}" ;;
+  esac
+fi
+export HISTFILESIZE=2500
+
+command -v nvim > /dev/null && export EDITOR=nvim
+
+if [[ $(uname) = "Darwin" ]]; then
+  export LC_ALL=zh_TW.UTF-8
+  [[ -n $BASH_VERSION ]] && export PS1='\u@\H:\w$ '
+fi

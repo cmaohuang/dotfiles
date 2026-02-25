@@ -1,0 +1,78 @@
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color=auto"
+else                                 # macOS `ls`
+  colorflag="-GF"
+fi
+export LSCOLORS=GxfxbEaEBxxEhEhBaDaCaD
+if command -v eza > /dev/null; then
+  alias ls='eza'
+  alias ll='eza -la'
+else
+  alias ls="ls ${colorflag}"
+  alias ll='ls -la'
+fi
+
+command -v tailf > /dev/null || alias tailf="tail -f"
+command -v colordiff > /dev/null && alias diff='colordiff'
+
+alias vi=nvim
+
+alias psa='ps aux'
+
+alias ..='cd ..'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias path='echo "$PATH" | tr ":" "\n"'
+
+alias grep='grep --color=auto'
+alias egrep='grep -E --color=auto'
+alias fgrep='grep -F --color=auto'
+
+alias df='df -h'
+if [ "$(uname)" = "Darwin" ]; then
+  alias du='du -h -d 2'
+else
+  alias du='du -h --max-depth=2'
+fi
+
+alias mkdir='mkdir -pv'
+
+alias mount='mount |column -t'
+
+alias h='history'
+#alias j='jobs -l'
+
+alias bc='bc -l'
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+alias sha1='openssl sha1'
+command -v md5sum > /dev/null || alias md5sum="md5"
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+command -v brew > /dev/null && alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+command -v code > /dev/null && alias c="code"
+
+alias ga='git a'
+alias gb='git b'
+alias gc='git c'
+alias gca='git ca'
+alias gci='git ci'
+alias gco='git co'
+alias gd='git d'
+alias gdc='git dc'
+alias gl='git l'
+alias gpl='git pl'
+alias gplr='git plr'
+alias gps='git ps'
+alias grs='git rs'
+alias grsh='git rsh'
+alias gs='git status'
+alias gsh='git show'
+alias gshow='git show'
+alias gup='git up'
+alias galias='git config --list | grep alias'
+

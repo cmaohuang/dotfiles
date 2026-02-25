@@ -1,0 +1,22 @@
+psg() { ps aux | grep -i -- "$1" | grep -v grep; }
+
+listen() {
+  if [ "$(uname)" = "Darwin" ]; then
+    lsof -i -n -P | grep LISTEN
+  elif command -v ss >/dev/null 2>&1; then
+    ss -lntp
+  else
+    netstat -ntlp
+  fi
+}
+
+function restow() {
+  stow -R -d ~/dotfiles -t "$HOME" editor git homebrew ruby shell system tmux
+  ln -sfn ~/dotfiles/git/.gitignore ~/.gitignore
+
+  if [[ -n "$ZSH_VERSION" ]]; then
+    exec zsh -l
+  elif [[ -n "$BASH_VERSION" ]]; then
+    exec bash -l
+  fi
+}

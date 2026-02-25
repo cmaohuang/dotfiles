@@ -1,0 +1,68 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+
+[color]
+    ui = true
+
+[diff]
+    renames = copies
+
+[diff "bin"]
+    textconv = hexdump -v -C
+
+[merge]
+    log = true
+
+[push]
+    default = simple
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[rebase]
+    autostash = true
+
+[init]
+    defaultBranch = main
+
+[help]
+    autocorrect = prompt
+
+[apply]
+    whitespace = nowarn
+
+[alias]
+    a = add
+    b = branch -v
+    c = commit
+    ca = commit -am
+    ci = commit
+
+    co = checkout
+    sw = switch
+    rsw = restore
+
+    d = diff
+    dc = diff --cached
+    l = log --graph --date=short
+    count = !git shortlog -sne
+
+    pl = pull
+    plr = pull --rebase
+    ps = push
+    up = pull --rebase --autostash
+
+    r = remote -v
+    rs = reset
+    rsh = reset --hard
+
+    s = status
+    st = status
+    sh = show
