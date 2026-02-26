@@ -76,3 +76,5 @@ alias gshow='git show'
 alias gup='git up'
 alias galias='git config --list | grep alias'
 
+# Docker
+[ -f ~/.docker_aliases ] && source ~/.docker_aliases
