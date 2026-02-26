@@ -33,6 +33,8 @@ for km in emacs viins vicmd; do
   [[ -n "${terminfo[kcud1]-}" ]] && bindkey -M "$km" "${terminfo[kcud1]}" history-substring-search-down
   bindkey -M "$km" $'\e[A' history-substring-search-up
   bindkey -M "$km" $'\e[B' history-substring-search-down
+  bindkey '^[^?' backward-kill-word # Alt/Option + Backspace（常見序列）
+  bindkey '^[\x7f' backward-kill-word # 有些終端會是這個
 done
 
 # --- history ---
