@@ -26,7 +26,6 @@ brew 'ripgrep'
 brew 'socat'
 brew 'stow'
 brew 'starship'
-brew 'gromgit/brewtils/taproom'
 brew 'tlrc'
 brew 'tmux'
 #brew 'tor'
@@ -48,7 +47,6 @@ cask 'font-fira-code'
 cask 'font-hack-nerd-font'
 cask 'ghostty'
 cask 'google-chrome'
-cask 'kap'
 #cask 'ledger-live'
 #cask 'postman'
 cask 'raycast'
@@ -71,9 +69,10 @@ cask 'telegram'
 ### AI ###
 brew 'arimxyer/tap/models'
 brew 'llmfit'
-brew 'mylee04/tools/code-notify'
+#brew 'mylee04/tools/code-notify'
 
 cask 'claude-devtools'
+cask 'cc-switch'
 
 ### dev ###
 brew 'bat'
@@ -115,6 +114,7 @@ cask 'visual-studio-code'
 
 brew 'colima'
 brew 'docker'
+cask 'docker-desktop'
 #brew 'k3d'
 #brew 'k3sup'
 #brew 'k9s'
@@ -132,9 +132,9 @@ brew 'docker'
 #cask 'scratch'
 #cask 'gimp'
 
-#mas 'Line', id: 539883307
-#mas 'Windows App', id: 1295203466
-#mas 'Pixelmator Pro', id: 1289583905
+mas 'Line', id: 539883307
+mas 'Windows App', id: 1295203466
+mas 'Pixelmator Pro', id: 1289583905
 #mas 'Xcode', id: 497799835
 #mas 'Final Cut Pro', id: 424389933
 #mas 'UPDF', id: 1619925971

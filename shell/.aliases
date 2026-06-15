@@ -16,6 +16,7 @@ command -v tailf > /dev/null || alias tailf="tail -f"
 command -v colordiff > /dev/null && alias diff='colordiff'
 
 alias vi=nvim
+alias vimdiff='nvim -d'
 
 alias psa='ps aux'
 
